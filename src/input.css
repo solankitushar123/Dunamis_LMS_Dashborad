@@ -1,7 +1,4 @@
-body {
-    font-family: 'Poppins', sans-serif;
-  }
-  
+/* src/input.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
