@@ -10,6 +10,7 @@ const routeTitles = {
     '/assignments': 'Assignments',
     '/homework': 'Homework',
     '/performance': 'My Performance',
+    
 
     // Teacher routes (optional, if you want)
     '/teacher': 'Teacher Home',

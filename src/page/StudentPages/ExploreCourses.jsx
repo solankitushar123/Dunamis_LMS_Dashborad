@@ -44,8 +44,8 @@ function TagButton({ label, bg, color, icon }) {
         color,
         fontFamily: "'Open Sans', sans-serif",
         fontWeight: 400,
-        fontSize: 14,
-        lineHeight: "130%",
+        fontSize: "0.875rem", // 14px
+        lineHeight: "1.3",
       }}
     >
       {icon && <span className="mr-1">{icon}</span>}
@@ -123,7 +123,7 @@ export default function ExploreCourses() {
   }, []);
 
   return (
-    <main className="w-full px-4 sm:px-8 py-7 min-h-screen bg-white">
+    <main className="w-full max-w-[1280px] mx-auto px-4 sm:px-8 py-7 min-h-screen bg-white">
       {/* Breadcrumb */}
       <nav className="mb-6 flex items-center text-sm text-[#4537c3]">
         <span
@@ -139,19 +139,19 @@ export default function ExploreCourses() {
       </nav>
 
       <h1
-        className="text-2xl font-bold mb-6"
+        className="text-2xl sm:text-3xl font-bold mb-6"
         style={{ fontFamily: "'Open Sans', sans-serif" }}
       >
         Explore Courses
       </h1>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center">
         {courses.map((course) => (
           <div
             key={course.id}
-            className="relative bg-white rounded-2xl border border-[#ECE9FC] shadow-sm hover:shadow-lg transition transform hover:scale-[1.01] flex flex-col"
-            style={{ width: "360px", height: "448px" }}
+            className="relative bg-white rounded-2xl border border-[#ECE9FC] shadow-sm hover:shadow-lg transition transform hover:scale-[1.01] flex flex-col w-full max-w-[360px]"
+            style={{ height: "448px" }}
           >
             {/* Image */}
             <div className="rounded-t-2xl w-full h-[150px] overflow-hidden">
@@ -163,7 +163,7 @@ export default function ExploreCourses() {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col flex-1 px-6 pt-4 pb-5">
+            <div className="flex flex-col flex-1 px-4 sm:px-6 pt-4 pb-5">
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-2">
                 {course.tags.map((tag, i) => (
@@ -180,14 +180,14 @@ export default function ExploreCourses() {
               {/* Title + Online badge */}
               <div className="flex items-center justify-between mb-2">
                 <h3
-                  className="text-[16px] font-semibold leading-[1.2] text-black"
+                  className="text-[16px] sm:text-[18px] font-semibold leading-[1.2] text-black"
                   style={{ fontFamily: "'Open Sans', sans-serif" }}
                 >
                   {course.title}
                 </h3>
 
                 <span
-                  className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-[11px] sm:text-[12px] font-semibold"
                   style={{
                     background: course.isOnline ? "#E6FBE9" : "#F3F3F3",
                     color: course.isOnline ? "#23BD33" : "#B0B0B0",
@@ -208,7 +208,7 @@ export default function ExploreCourses() {
 
               {/* Description */}
               <p
-                className="text-gray-600 text-sm leading-relaxed mb-3 h-[44px] overflow-hidden"
+                className="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 h-[44px] overflow-hidden"
                 style={{ fontFamily: "'Open Sans', sans-serif" }}
               >
                 {course.description}
@@ -266,7 +266,7 @@ export default function ExploreCourses() {
 
                   {/* price */}
                   <div
-                    className="text-[20px] font-semibold text-black"
+                    className="text-[18px] sm:text-[20px] font-semibold text-black"
                     style={{ fontFamily: "'Open Sans', sans-serif" }}
                   >
                     {course.price}
@@ -275,7 +275,7 @@ export default function ExploreCourses() {
 
                 {/* CTA */}
                 <button
-                  className="mt-4 bg-[#E7D6F8] hover:bg-[#D3B3EE] text-black rounded-2xl py-3 w-full font-semibold"
+                  className="mt-4 bg-[#E7D6F8] hover:bg-[#D3B3EE] text-black rounded-2xl py-3 w-full font-semibold transition-colors"
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
                     fontSize: 16,
